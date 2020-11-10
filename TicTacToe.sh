@@ -16,10 +16,10 @@ function createBoard()
 
 		for (( i=0;i<7;i=i+3 ))
 		do
-				${board[$i]} 
-			        ${board[$i+1]} 
-		         	${board[$i+2]} 
-				
+				${board[$i]}
+			        ${board[$i+1]}
+		         	${board[$i+2]}
+
 		done
 }
 
@@ -31,18 +31,25 @@ function  assignSymbol()
 		if [[ $symbol -eq 1 ]]
 		then
 				player="User"
-				#echo "Your symbol is X "
-				#echo "Computer symbol is O"
 				user="X"
 				computer="O"
 		else
 				player="Computer"
-				#echo "Your symbol is O "
-				#echo "Computer symbol is X"
 				user="O"
 				computer="X"
 		fi
 }
+#To show Board
+function showBoard()
+{
+   echo "  --------"
+                    for (( i=0;i<7;i=i+3 ))
+		do
+				echo " | ${board[$i]} | ${board[$i+1]} | ${board[$i+2]} |"
+				echo "  --------"
+		done
+}
 #Call Function 
 createBoard
 assignSymbol
+showBoard
